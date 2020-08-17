@@ -16,6 +16,12 @@ static double dminarg1, dminarg2;
 #define DMIN(a,b) (dminarg1=(a), dminarg2=(b), \
 		(dminarg1) < (dminarg2) ? (dminarg1) : (dminarg2))
 
+static float maxarg1, maxarg2;
+#define FMAX(a,b) (maxarg1=(a), maxarg2=(b), \
+		(maxarg1) > (maxarg2) ? (maxarg1) : (maxarg2))
 
+static float minarg1, minarg2;
+#define FMIN(a,b) (minarg1=(a), minarg2=(b), \
+		(minarg1) < (minarg2) ? (minarg1) : (maxarg2))
 
 #endif
