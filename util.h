@@ -24,4 +24,12 @@ static float minarg1, minarg2;
 #define FMIN(a,b) (minarg1=(a), minarg2=(b), \
 		(minarg1) < (minarg2) ? (minarg1) : (maxarg2))
 
+static long lmaxarg1, lmaxarg2;
+#define LMAX(a,b) (lmaxarg1=(a), lmaxarg2=(b), \
+		(lmaxarg1) > (lmaxarg2) ? (lmaxarg1) : (lmaxarg2))
+
+static long lminarg1, lminarg2;
+#define LMIN(a,b) (lminarg1=(a), lminarg2=(b), \
+		(lminarg1) < (lminarg2) ? (lminarg1) : (lminarg2))
+
 #endif
