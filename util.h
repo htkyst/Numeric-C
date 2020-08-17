@@ -1,4 +1,3 @@
-#pragma once
 #ifndef _UTILS_H_
 #define _UTILS_H_
 
@@ -31,5 +30,15 @@ static long lmaxarg1, lmaxarg2;
 static long lminarg1, lminarg2;
 #define LMIN(a,b) (lminarg1=(a), lminarg2=(b), \
 		(lminarg1) < (lminarg2) ? (lminarg1) : (lminarg2))
+
+static int imaxarg1, imaxarg2;
+#define IMAX(a,b) (imaxarg1=(a), imaxarg2=(b), \
+		(imaxarg1) > (imaxarg2) ? (imaxarg1) : (imaxarg2))
+
+static int iminarg1, iminarg2;
+#define IMIN(a,b) (iminarg1=(a), iminarg2=(b), \
+		(iminarg1) < (iminarg2) ? (iminarg1) : (iminarg2))
+
+
 
 #endif
