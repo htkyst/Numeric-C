@@ -41,6 +41,9 @@ static int iminarg1, iminarg2;
 
 #define SIGN(a,b) ((b) >= 0.0 ? fabs(a) : -fabs(a))
 
+#define nmalloc(var,type,size,msg) \
+		var=(type*)malloc((size_t)(size)*sizeof(type));	\
+		if (!var) nerror(msg);
 
 void nerror(char error_text[]);
 
@@ -56,13 +59,19 @@ void free_vector(float* v, long nl, long nh);
 void free_ivector(int* v, long nl, long nh);
 void free_cvector(unsigned char* v, long nl, long nh);
 void free_lvector(unsigned long* v, long nl, long nh);
-void free_dvector(unsigned long* v, long nl, long nh);
+void free_dvector(double* v, long nl, long nh);
+
+/* Print vector */
+void print_vector(float* v, long nl, long nh);
+void print_ivector(int* v, long nl, long nh);
+void print_cvector(unsigned char* v, long nl, long nh);
+void print_lvector(unsigned long* v, long nl, long nh);
+void print_dvector(double* v, long nl, long nh);
 
 /* Creater matrix */
 float** matrix(long nrl, long nrh, long ncl, long nch);
 double** dmatrix(long nrl, long nrh, long ncl, long nch);
 int** imatrix(long nrl, long nrh, long ncl, long nch);
-
 float** submatrix(float** a, long oldrl, long oldrh, long oldcl, long oldch,
 	long newrl, long newcl);
 float** convert_matrix(float* a, long nrl, long nrh, long ncl, long nch);
@@ -74,9 +83,20 @@ void free_imatrix(int** m, long nrl, long nrh, long ncl, long nch);
 void free_submatrix(float** b, long nrl, long nrh, long ncl, long nch);
 void free_convert_matrix(float** b, long nrl, long nrh, long ncl, long nch);
 
+/* Print matrix */
+void print_matrix(float** m, long nrl, long nrh, long ncl, long nch);
+void print_dmatrix(double** m, long nrl, long nrh, long ncl, long nch);
+void print_imatrix(int** m, long nrl, long nrh, long ncl, long nch);
+void print_submatrix(float** b, long nrl, long nrh, long ncl, long nch);
+void print_convert_matrix(float** b, long nrl, long nrh, long ncl, long nch);
+
 /* Create tensor */
 float*** f3tensor(long nrl, long nrh, long ncl, long nch, long ndl, long ndh);
+
 /* Release tensor */
 void free_f3tensor(float*** t, long nrl, long nrh, long ncl, long nch, long ndl, long ndh);
+
+/* Print tensor */
+void print_f3tensor(float*** t, long nrl, long nrh, long ncl, long nch, long ndl, long ndh);
 
 #endif /* _UTILS_H_ */
