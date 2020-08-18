@@ -1,10 +1,10 @@
-#include <stdio.h>
-
 #include "util.h"
+#include "complex.h"
+#include <stdio.h>
 
 int main(void)
 {
-	printf("%lf\n", SQR(3.f));
+
 
 	return 0;
 }
